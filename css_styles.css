@@ -1,122 +1,72 @@
-/* === General Romantic Theme & Reset === */
 body, html {
     margin: 0;
     padding: 0;
-    font-family: 'Tajawal', 'Cairo', Arial, sans-serif;
-    background: linear-gradient(135deg, #ffdde1 0%, #ee9ca7 100%);
+    font-family: 'Cairo', 'Tajawal', Arial, sans-serif;
+    background: radial-gradient(circle at 65% 20%, #ffe5ec 0%, #fb6f92 100%);
     min-height: 100vh;
     box-sizing: border-box;
     transition: background 1s;
 }
 
 .romantic-bg {
-    background: linear-gradient(135deg, #fceabb 0%, #f8b500 100%);
-    position: relative;
     min-height: 100vh;
     overflow-x: hidden;
 }
+
 .container {
-    max-width: 420px;
-    margin: 6vh auto 0 auto;
+    max-width: 470px;
+    margin: 5vh auto 0 auto;
     background: rgba(255,255,255,0.96);
-    border-radius: 18px;
-    box-shadow: 0 8px 32px rgba(236,42,79,0.13);
-    padding: 36px 32px;
+    border-radius: 25px;
+    box-shadow: 0 8px 32px 6px #fb6f9227;
+    padding: 38px 28px 18px 28px;
     position: relative;
 }
-.main-heading,
+
+.main-heading {
+    color: #d72660;
+    font-size: 2.3em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #792c7d;
+    font-size: 1.1em;
+    margin-bottom: 26px;
+}
+
 .letter-heading,
 .gallery-heading {
     color: #d72660;
     font-weight: bold;
     text-align: center;
-}
-.main-heading {
-    margin-bottom: 40px;
-    font-size: 2.2em;
-    letter-spacing: 1px;
-}
-.romantic-btn {
-    background: linear-gradient(90deg, #fd6585, #0d25b9 90%);
-    color: #fff;
-    padding: 12px 0;
-    width: 100%;
-    border: none;
-    border-radius: 12px;
-    margin-top: 18px;
-    font-size: 1.1em;
-    cursor: pointer;
-    box-shadow: 0 2px 24px #fd658577;
-    transition: background 0.22s, transform 0.3s;
-}
-.romantic-btn:hover,
-.logout-btn:hover {
-    background: linear-gradient(90deg, #e54e6a, #0e2079 90%);
-    transform: translateY(-2px) scale(1.04) rotate(-0.5deg);
+    font-size: 1.22em;
 }
 
-/* === Login Form === */
-.login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-.login-form label {
-    color: #57265d;
-    margin-bottom: 4px;
-    font-size: 1em;
-}
-.login-form input {
-    padding: 10px 12px;
-    border: 1.5px solid #fd6585;
-    border-radius: 8px;
-    font-size: 1em;
-    outline: none;
-    background: #fff8f4;
-    transition: border 0.18s;
-}
-.login-form input:focus {
-    border-color: #0d25b9;
-    background: #fff5f9;
-}
-
-/* === Private Nav === */
-.private-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 18px;
-}
-.logo {
-    font-size: 2.2em;
-    color: #e4015a;
-}
-.logout-btn {
-    width: 85px;
-    font-size: 1em;
-    margin: 0;
-    background: #e4015a;
-}
-
-/* === Love Letter Section === */
 .love-letter-section {
-    margin-bottom: 36px;
+    margin-bottom: 38px;
 }
 .love-letter {
-    font-size: 1.28em;
+    font-size: 1.15em;
     color: #91406a;
-    background: #fce4f9;
-    padding: 24px 18px;
+    background: #ffb3c6;
+    padding: 22px 16px;
     border-radius: 14px;
     box-shadow: 0 1px 12px #fd658522;
-    line-height: 2.1;
+    line-height: 2.2;
     direction: rtl;
     word-spacing: 2px;
-    margin-top: 12px;
+    margin-top: 13px;
     text-align: right;
+    border: 1.8px solid #fb6f92;
+    background-image: linear-gradient(130deg, #ffe5ec 70%, #fb6f92 100%);
 }
 
-/* === Gallery Section === */
+/* ===== Image Gallery ===== */
 .gallery-section {
     margin-top: 18px;
 }
@@ -124,50 +74,59 @@ body, html {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 14px;
-    margin-top: 14px;
+    margin-top: 15px;
 }
 .image-gallery img {
     width: 100%;
-    border-radius: 9px;
-    box-shadow: 0 3px 15px #fd658522;
+    border-radius: 18px;
+    box-shadow: 0 3px 15px #fb6f9280;
     object-fit: cover;
-    height: 150px;
-    transition: transform 0.34s cubic-bezier(.22,1,.36,1), box-shadow 0.2s;
+    height: 140px;
     cursor: pointer;
+    transition: transform 0.35s cubic-bezier(.22,1,.36,1), box-shadow 0.23s;
+    border: 2.2px solid #e4015a43;
 }
 .image-gallery img:hover {
-    transform: scale(1.06) rotate(-2deg);
-    box-shadow: 0 5px 25px #0d25b948;
+    transform: scale(1.07) rotate(-2deg);
+    box-shadow: 0 7px 26px #d7264066;
+    border-color: #d72660bb;
 }
 
-/* === Fade In Animation === */
+/* === Fade-In Animation === */
 .fade-in {
-    animation: fadeInRom 1.2s ease;
+    animation: fadeInRom 1.25s ease;
 }
 @keyframes fadeInRom {
-    from { opacity: 0; transform: translateY(16px); }
+    from { opacity: 0; transform: translateY(18px); }
     to   { opacity: 1; transform: none; }
 }
 
-/* === Mobile Responsiveness === */
+/* === Footer === */
+.footer {
+    text-align: center;
+    color: #d72660;
+    margin-top: 34px;
+    font-size: 1em;
+    opacity: 0.93;
+    letter-spacing: 1px;
+    font-family: inherit;
+}
+
+/* === Responsive for Mobile === */
 @media (max-width:650px) {
     .container {
-        max-width: 98vw;
-        padding: 18px 6vw;
+        max-width: 99vw;
+        padding: 17px 6vw 12px 6vw;
     }
     .main-heading {
-        font-size: 1.3em;
+        font-size: 1.35em;
     }
     .love-letter {
-        font-size: 1.05em;
-        padding: 12px 6px;
+        font-size: 1.01em;
+        padding: 11px 6px;
     }
     .image-gallery {
         grid-template-columns: 1fr;
         gap: 11px;
-    }
-    .private-nav {
-        flex-direction: column;
-        gap: 10px;
     }
 }
