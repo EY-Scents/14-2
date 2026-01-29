@@ -1,0 +1,97 @@
+<!doctype html>
+<!--
+  private.html
+  - Private page: shows Arabic love letter and couple image gallery
+  - This page checks localStorage for a front-end "isAuthenticated" flag and redirects to login if missing
+  - Includes a logout button that clears the flag and returns to index.html
+-->
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>رسالة حب — Private</title>
+  <!-- Arabic-friendly font + display font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page-private">
+  <header class="private-header">
+    <div class="header-left">
+      <button id="logoutBtn" class="btn ghost">تسجيل الخروج</button>
+    </div>
+    <div class="header-center">
+      <h1 class="title">رسالة حب خاصة</h1>
+      <p class="subtitle">مكانك الآمن — لحظات، صور، وكلمات من القلب</p>
+    </div>
+    <div class="header-right">
+      <div class="avatar" id="userAvatar" aria-hidden="true">♡</div>
+    </div>
+  </header>
+
+  <main class="container private-main">
+    <!-- Arabic love letter area -->
+    <article class="letter-card card" id="loveLetter" role="article" aria-labelledby="letterTitle">
+      <h2 id="letterTitle" class="section-title">إليكِ يا أقرب الناس</h2>
+
+      <!-- Long Arabic love letter. dir="rtl" and appropriate font handle layout -->
+      <div class="letter-content" dir="rtl">
+        <p>إليكِ يا نور الصباح وسر السرائر، أكتبُ كلماتٍ لا تسعها لغةٌ، ولا تستوعبها سطور، لكنها تنبضُ صدقًا عند ذكر اسمكِ. كنتُ أبحثُ عن معنى الدفء في الليالي الباردة، فإذا بكِ حضنٌ لا يُضاهى، وواحةٌ ترفرف فيها روحي.</p>
+
+        <p>حين أراكِ أرى وقتي يتوقف، ويصبح الحديث بيننا لغةً خاصة، نختصر بها كل ما فات، ونبني بها آمالًا تثمر ضحكةً ومنتهى الحنان. أحبّ فيكِ الصمت حين نَمشي معًا، لأن صمتنا حديثٌ يفوق الكلام أحيانًا، وأحبّ فيكِ ضحكتكِ العفوية التي تُعيدْ للزمن بهجته.</p>
+
+        <p>تعلمين أني أحفظُ تفاصيلكِ الصغيرة كما تحفظ النجوم طريقها في السماء: طريقةُ ضحككِ، لمعةُ عينيكِ عندما تتحدثين عن حلمٍ، ومشهدُ اليدين المتشابكتين في نهاية اليوم. كلُّها صورٌ أكرّسها في قلبي، وأحملها معي حيثما ذهبتُ.</p>
+
+        <p>أعدكِ أن أكون لكِ سِلْمًا إلى سلامكِ، ومرآةً تعكس أمانكِ، وكتابًا نكتبُ في صفحاتهِ غزلَ الصدقِ والوفاء. إن ما بيننا ليس كلماتٍ عابرة، بل عهدٌ نزرعهُ كل يومٍ بحبٍ أكبر، وإحساسٍ أعمق. سأحميكِ من ضوضاء العالم، وأحتفلُ معكِ بالهدوء الجميل الذي نصنعه سويًا.</p>
+
+        <p>إن كان للحياةِ معنىً فقد أعطتْه لي حين قدمتُكِ فيها. وما زال قلبي يكتشفكِ كل صباحٍ كأنها أول مرة، ويشعر بالدهشة لكوني محظوظًا بسكنى وجودك في تفاصيل أيامي. أحبكِ بكل ما في اللغة من تناغمٍ، وبكل ما في الزمن من احتواءٍ ووفاء.</p>
+
+        <p>لن تنتهي كلماتي هنا، فهي بدايةٌ لحكايةٍ نتقاسمها بلا موعد انتهاء. فلتبقي معي، لنصنع غ��ًا يُحكى عنه بلحنٍ من نصفيْن، ولتكن أيامي معكِ قصيدةً لا تُقرأ إلا بقلوبنا.</p>
+
+        <p class="signature">بكل حُب،<br>محبكِ الدائم</p>
+      </div>
+    </article>
+
+    <!-- Image gallery area -->
+    <section class="gallery-card card">
+      <h2 class="section-title">معرض الصور</h2>
+      <p class="muted">اضغطي على أي صورة لعرضها مكبّرة مع تأثيرات لطيفة.</p>
+
+      <div id="gallery" class="gallery-grid" aria-live="polite">
+        <!-- Images hotlinked from Unsplash for demo. Replace URLs with your own images. -->
+        <figure class="gallery-item" tabindex="0">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=9b1b7e3d28b5b3d5043c1b5e3c2a2be5" alt="Couple walking at sunset" loading="lazy">
+        </figure>
+
+        <figure class="gallery-item" tabindex="0">
+          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=2f8c2e3b6f6b8da0a4cc9c1821b6a9b8" alt="Close hands" loading="lazy">
+        </figure>
+
+        <figure class="gallery-item" tabindex="0">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=9c02e6173f62a6d35b3c5b4c3573f2b2" alt="Couple portrait" loading="lazy">
+        </figure>
+
+        <figure class="gallery-item" tabindex="0">
+          <img src="https://images.unsplash.com/photo-1514996937319-344454492b37?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=203e8db7d3f2f5d3dcae8b3c3c6f8df3" alt="Holding hands on bench" loading="lazy">
+        </figure>
+
+        <figure class="gallery-item" tabindex="0">
+          <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1b5d2fd554a5ee26e3f4b1f7a6a1a9c9" alt="Romantic picnic" loading="lazy">
+        </figure>
+
+        <figure class="gallery-item" tabindex="0">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3b5c7a9b4a2f9a5a6d5b3f2a0d7e3c1e" alt="Silhouette at sunset" loading="lazy">
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox / modal element (hidden by default) -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="صورة مكبرة">
+    <button id="lbClose" class="btn lb-close" aria-label="Close">×</button>
+    <img id="lbImage" src="" alt="" />
+    <div id="lbCounter" class="lb-counter" aria-hidden="true"></div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
